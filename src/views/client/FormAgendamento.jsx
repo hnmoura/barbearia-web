@@ -1,43 +1,53 @@
 import { useState } from 'react';
-import { Form, Button, TextArea, Select, Grid } from 'semantic-ui-react';
+import { Form, Button, Grid, Icon, Dropdown  } from 'semantic-ui-react';
 import MenuSistema from '../../MenuSistema';
+import axios from "axios";
+
+// Array para serviços - futuramente retirados direto do banco de acordo com a disponibilidade
+const servicosOptions = [
+  { key: 'corte', text: 'Corte de Cabelo', value: 'Corte de Cabelo' },
+  { key: 'barba', text: 'Barba', value: 'Barba' },
+  { key: 'sobrancelha', text: 'Sobrancelha', value: 'Sobrancelha' },
+];
+// Array para barbeiros
+const barbeirosOptions = [
+  { key: 'joao', text: 'João', value: 'João' },
+  { key: 'maria', text: 'Maria', value: 'Maria' },
+  { key: 'carlos', text: 'Carlos', value: 'Carlos' },
+];
+
+// Função para salvar os dados
+function Agendamento() {
+  const [nome, setNome] = useState(); // futuramente pegar nome a partir do cookies de login
+  const [servico, setServico] = useState();
+  const [dataAtendimento, setDataAtendimento] = useState();
+  const [horario, setHorario] = useState();
+  const [barbeiro, setBarbeiro] = useState();
+  const [observacoes, setObservacoes] = useState();
 
 
-function FormAgendamento() {
-  const [formData, setFormData] = useState({
-    cliente: '',
-    barbeiro: '',
-    servico: '',
-    data: '',
-    hora: '',
-    observacoes: ''
-  });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-  const handleSelectChange = (e, { name, value }) => {
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
+  function salvar() {
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Agendamento enviado:', formData);
-    // Enviar para API aqui
-  };
-
-  const barbeiros = [
-    { key: 'joao', value: 'joao', text: 'João' },
-    { key: 'pedro', value: 'pedro', text: 'Pedro' },
-    { key: 'rafael', value: 'rafael', text: 'Rafael' },
-  ];
-
-  const servicos = [
-    { key: 'corte', value: 'corte', text: 'Corte' },
-    { key: 'barba', value: 'barba', text: 'Barba' },
-    { key: 'sobrancelha', value: 'sobrancelha', text: 'Sobrancelha' },
-  ];
+    let AgendamentoRequest = {
+        nome: nome,
+        servico: servico,
+        dataAtendimento: dataAtendimento,
+        horario: horario,
+        barbeiro: barbeiro,
+        observacoes: observacoes,
+    }
+    
+    //faz o post para o banco
+    axios.post("http://localhost:8080/api/agendamento", AgendamentoRequest)
+    // exceção caso não funcione
+    .then((response) => {
+         console.log('Agendado com sucesso.')
+    })
+    .catch((error) => {
+      console.error('Erro ao incluir o agendamento:', error.response?.data || error.message);
+    })
+  }
 
   return (
     <div className="ui container">
@@ -45,73 +55,85 @@ function FormAgendamento() {
       <Grid stackable centered>
         <Grid.Row>
           <Grid.Column mobile={16} tablet={8} computer={8}>
-            <Form className="ui form" onSubmit={handleSubmit}>
+            <Form className="ui form" widths='equal'>
               <Form.Field>
                 <label>Nome Completo</label>
                 <input
                   type="text"
-                  name="cliente"
-                  value={formData.cliente}
-                  onChange={handleChange}
+                  name="nome"
+                  value={nome}
+                  onChange={e => setNome(e.target.value)}
                   placeholder="Nome do Cliente"
                 />
               </Form.Field>
-
               <Form.Field>
-                <label>Serviço disponível</label>
-                <Select
-                  name="servico"
-                  value={formData.servico}
-                  onChange={handleChange}
-                  options={servicos}
-                  placeholder="Selecione o serviço"
-                />
-              </Form.Field>
-
-              <Form.Field>
-                <label>Barbeiro</label>
-                <Select
-                  name="servico"
-                  value={formData.servico}
-                  onChange={handleSelectChange}
-                  options={servicos}
-                  placeholder="Selecione o serviço"
-                />
-              </Form.Field>
-
-              <Form.Field>
-                <label>Data</label>
+                <label>Data de atendimento</label>
                 <input
                   type="date"
-                  name="data"
-                  value={formData.data}
-                  onChange={handleChange}
+                  name="dataAtendimento"
+                  value={dataAtendimento}  // A data é mantida no formato yyyy-MM-dd
+                  onChange={e => setDataAtendimento(e.target.value)}  // A data é salva diretamente no formato correto
                 />
               </Form.Field>
-
               <Form.Field>
-                <label>Hora</label>
+                <label>Serviço</label>
+                <Dropdown
+                  placeholder='Selecione um serviço'
+                  fluid
+                  selection
+                  name="servico"
+                  options={servicosOptions}
+                  value={servico}
+                  onChange={(e, data) => setServico(data.value)}
+                />
+              </Form.Field>
+              <Form.Field>
+                <label>Barbeiro</label>
+                <Dropdown
+                  placeholder='Selecione um barbeiro'
+                  fluid
+                  selection
+                  name="barbeiro"
+                  options={barbeirosOptions}
+                  value={barbeiro}
+                  onChange={(e, data) => setBarbeiro(data.value)}
+                />
+              </Form.Field>
+              <Form.Field>
+                <label>Horário</label>
                 <input
                   type="time"
-                  name="hora"
-                  value={formData.hora}
-                  onChange={handleChange}
+                  name="horario"
+                  value={horario}
+                  onChange={e => setHorario(e.target.value)}
+                  placeholder="Selecione o horário"
                 />
               </Form.Field>
-
               <Form.Field>
-                <label>Observações</label>
-                <TextArea
+                <label>Observacoes</label>
+                <textarea
+                  type="text"
                   name="observacoes"
-                  value={formData.observacoes}
-                  onChange={handleChange}
-                  placeholder="Observações adicionais"
+                  value={observacoes}
+                  onChange={e => setObservacoes(e.target.value)}
+                  placeholder="Alergias, preferências, detalhes"
                 />
               </Form.Field>
 
-              <Button className="ui button" type="submit" primary>
-                Agendar
+              <Button
+                className="ui button"
+                inverted
+                circular
+                icon
+                labelPosition='left'
+                color='blue'
+                floated='right'
+                onClick={() => salvar()}
+              >
+                <Icon name='save' />
+                Salvar
               </Button>
+
             </Form>
           </Grid.Column>
         </Grid.Row>
@@ -120,4 +142,4 @@ function FormAgendamento() {
   );
 }
 
-export default FormAgendamento;
+export default Agendamento;
