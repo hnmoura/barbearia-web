@@ -6,6 +6,7 @@ import FormAgendamento from './views/client/FormAgendamento';
 import CadastroCliente from './views/client/CadastroCliente';
 import CadastroBarbeiro from './views/admin/CadastroBarbeiro';
 
+
 function Rotas() {
     return (
 

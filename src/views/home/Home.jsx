@@ -1,31 +1,59 @@
+
 import React from "react";
-import { Container, Grid, Image } from 'semantic-ui-react';
+import { Container, Grid, Image, Step } from 'semantic-ui-react';
 import MenuSistema from '../../MenuSistema';
 
-function Home () {
+function Home() {
+  return (
+    <div>
+      <MenuSistema tela={'home'} />
+      
+      <div style={{ marginTop: '5%' }}>
+        <Container>
+          <Grid columns={2} divided>
+            <Grid.Row>
+              <Grid.Column>
+                <Image src='/logoprovisorio.png' size='small' />
+              </Grid.Column>
+              <Grid.Column>
+                <h2>Bem-vindo à Barbearia, Chefe!</h2>
+                <p>Por onde começar?</p>
+                
+                <Step.Group vertical ordered>
+                  <Step>
+                    <Step.Content>
+                      <Step.Title>Realize seu cadastro</Step.Title>
+                      <Step.Description>
+                        Informe seus dados num formulário simples.
+                      </Step.Description>
+                    </Step.Content>
+                  </Step>
 
-   return(
-       <div>
-        <MenuSistema tela={'home'} />
-           <div style={{marginTop: '5%'}}>
-               <Container>
-                   <Grid columns={2} divided>
-                       <Grid.Row>
-                           <Grid.Column>
-                               <Image src='/logoprovisorio.png' size='small' />
-                           </Grid.Column>
-                           <Grid.Column>
-                              
-                               Bem vindo à Barbearia Chefe <br/>
-                               Este sistema foi desenvolvido na disciplina de Projeto e Prática II. <br/> <br/>
-                            
+                  <Step>
+                    <Step.Content>
+                      <Step.Title>Agende um atendimento </Step.Title>
+                      <Step.Description>
+                        Oferecemos diversos serviços de beleza e estética.
+                      </Step.Description>
+                    </Step.Content>
+                  </Step>
 
-                           </Grid.Column>
-                       </Grid.Row>
-                   </Grid>
-               </Container>
-           </div>
-       </div>
-   )
+                  <Step>
+                    <Step.Content>
+                      <Step.Title> Faça-nos uma visita </Step.Title>
+                      <Step.Description>
+                        Usufrua de nossos serviços como um verdadeiro <strong> Chefe </strong>.
+                      </Step.Description>
+                    </Step.Content>
+                  </Step>
+                </Step.Group>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Container>
+      </div>
+    </div>
+  );
 }
+
 export default Home;

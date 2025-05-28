@@ -11,9 +11,9 @@ function App() {
       
       <Rotas /> {/*Importando as rotas*/}
 
-      <div style={{marginTop: '6%'}}>
+      <div style={{marginTop: '9%'}}>
         <Segment vertical color='grey' size='tiny' textAlign='center'>
-          &copy; 2025 - Projeto e Prática II - IFPE Jaboatão dos Guararapes
+          &copy; 2025 - Barbearia Chefe - IFPE Jaboatão dos Guararapes
         </Segment>
       </div>
 

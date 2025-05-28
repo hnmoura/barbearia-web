@@ -1,27 +1,36 @@
+body{
+  background-color: fixed;
+}
 
 .form-segment {
   background-color: #C78E28 ;
-  border-radius: 10px ;
+  border-radius:20px ;
   padding: 2em ;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  width: 5  00px;
+  margin: 0 auto;
+  height: auto;
 }
 
-.form-title {
-  color: #C78E28;
-  font-size: 2em;
-  text-align: center;
-  margin-bottom: 1em;
+.divider-lateral {
+  border-right: 2px solid #d4d4d5;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Esse botão é o da biblioteca semantic-ui, desenvolver estilização própria
+.formulario-ajustada {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 .save-button {
-  background-color: #C78E28 !important;
+  background-color: hwb(0 7% 93%) !important;
   color: white !important;
   font-weight: bold;
 }
 
 .save-button:hover {
-  background-color: #A66F14 !important;
+  background-color: #fff9f9 !important;
 }
 
-*/ 
