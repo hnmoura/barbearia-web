@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Form, Button, Grid, Icon  } from 'semantic-ui-react';
 import MenuSistema from '../../MenuSistema';
 import axios from "axios";
+import './CadastroBarbeiro.css';
 
 //skills do barbeiro - futuramente vindo direto do banco
 const skillOptions = [
@@ -60,7 +61,7 @@ function CadastroBarbeiro() {
       <Grid stackable centered>
         <Grid.Row>
           <Grid.Column mobile={16} tablet={8} computer={8}>
-            <Form className="ui form" widths='equal'>
+            <Form className="ui form form-segment" widths='equal'>
               <Form.Field>
                 <label>Nome Completo</label>
                 <input
