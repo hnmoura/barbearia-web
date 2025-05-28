@@ -13,7 +13,7 @@ function Home() {
           <Grid columns={2} divided>
             <Grid.Row>
               <Grid.Column>
-                <Image src='/logoprovisorio.png' size='small' />
+                <Image src='/logoprovisorio.png' size='medium' />
               </Grid.Column>
               <Grid.Column>
                 <h2>Bem-vindo à Barbearia, Chefe!</h2>
