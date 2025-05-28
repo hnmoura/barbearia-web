@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Form, Button, Grid, Icon, Container, Image } from 'semantic-ui-react';
 import MenuSistema from '../../MenuSistema';
 import axios from "axios";
-import './CadastroBarbeiro.css';
+
 
 //skills do barbeiro - futuramente vindo direto do banco
 const skillOptions = [
@@ -56,134 +56,133 @@ function CadastroBarbeiro() {
     }
 
   return (
-    <div className="ui container">
+    <>
       <MenuSistema tela={'barbeiro'} />
-      <Grid columns={2} divided stackable>
-        <Grid.Row>
-          <Grid.Column width={7}>
-            <Form className="ui form form-segment" widths='equal'>
-              <Form.Field>
-                <label>Nome Completo</label>
-                <input
-                  type="text"
-                  name="nome"
-                  value={nome}
-                  onChange={e => setNome(e.target.value)}
-                  placeholder="Nome do Cliente"
-                />
-              </Form.Field>
-              <Form.Field>
-                <label>Data de nascimento</label>
-                <input
-                  type="date"
-                  name="dataNascimento"
-                  value={dataNascimento}
-                  onChange={e => setDataNascimento(e.target.value)}
-                />
-              </Form.Field>
-              <Form.Field>
-                <label>CPF</label>
-                <input
-                  type="text"
-                  name="cpf"
-                  value={cpf}
-                  onChange={e => setCpf(e.target.value)}
-                  placeholder="cpf"
-                />
-              </Form.Field>
-              <Form.Field>
-                <label>Endereço</label>
-                <input
-                  type="text"
-                  name="endereco"
-                  value={endereco}
-                  onChange={e => setEndereco(e.target.value)}
-                  placeholder="Endereço"
-                />
-              </Form.Field>
-              <Form.Field>
-                <label>Telefone</label>
-                <input
-                  type="text"
-                  name="telefone"
-                  value={foneCelular}
-                  onChange={e => setFoneCelular(e.target.value)}
-                  placeholder="Número de telefone"
-                />
-              </Form.Field>
-              <Form.Field>
-                <label>Email</label>
-                <input
-                  type="text"
-                  name="email"
-                  value={email}
-                  onChange={e => setEmail(e.target.value)}
-                  placeholder="Email"
-                />
-              </Form.Field>
-              <Form.Field>
-                <label>Começo do expediente</label>
-                <input
-                  type="time"
-                  name="atendimentoInicio"
-                  value={atendimentoInicio}
-                  onChange={e => setAtendimentoInicio(e.target.value)}
-                  placeholder="Selecione o horário"
-                />
-                <label>Fim do expediente</label>
-                <input
-                  type="time"
-                  name="atendimentoFim"
-                  value={atendimentoFim}
-                  onChange={e => setAtendimentoFim(e.target.value)}
-                  placeholder="Selecione o horário"
-                />
-              </Form.Field>
-              <Form.Field>
-                <label>Skills do Barbeiro</label>
-                <Form.Dropdown
-                  placeholder='Selecione as skills'
-                  fluid
-                  multiple
-                  selection
-                  name="skills"
-                  options={skillOptions}
-                  value={skills}
-                  onChange={(e, { value }) => setSkills(value)}
-                />
-              </Form.Field>
-              <Form.Field>
-                <label>Senha</label>
-                <input
-                  type="text"
-                  name="senha"
-                  value={senha}
-                  onChange={e => setSenha(e.target.value)}
-                  placeholder="Escolha uma senha"
-                />
-              </Form.Field>
-              <Button 
-                align='center'
-                className="ui button"
-                inverted
-                circular
-                icon
-                labelPosition='left'
-                color='black'
-                floated='right'
-                onClick={() => salvar()}
-              >
-                <Icon name='save' />
-                Salvar
-              </Button>
-            </Form>
-          </Grid.Column>
-          <Grid.Column width={6} textAlign="center" verticalAlign="middle">
-            <Image src='/logoprovisorio.png' size='medium' />
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    </div>
+      <div className="ui container">
+        <Grid columns={2} divided stackable>
+          <Grid.Row>
+            <Grid.Column width={7}>
+              <Form className="ui form form-segment" widths='equal'>
+                <Form.Field>
+                  <label>Nome Completo</label>
+                  <input
+                    type="text"
+                    name="nome"
+                    value={nome}
+                    onChange={e => setNome(e.target.value)}
+                    placeholder="Nome do Cliente"
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Data de nascimento</label>
+                  <input
+                    type="date"
+                    name="dataNascimento"
+                    value={dataNascimento}
+                    onChange={e => setDataNascimento(e.target.value)}
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>CPF</label>
+                  <input
+                    type="text"
+                    name="cpf"
+                    value={cpf}
+                    onChange={e => setCpf(e.target.value)}
+                    placeholder="cpf"
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Endereço</label>
+                  <input
+                    type="text"
+                    name="endereco"
+                    value={endereco}
+                    onChange={e => setEndereco(e.target.value)}
+                    placeholder="Endereço"
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Telefone</label>
+                  <input
+                    type="text"
+                    name="telefone"
+                    value={foneCelular}
+                    onChange={e => setFoneCelular(e.target.value)}
+                    placeholder="Número de telefone"
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Email</label>
+                  <input
+                    type="text"
+                    name="email"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                    placeholder="Email"
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Começo do expediente</label>
+                  <input
+                    type="time"
+                    name="atendimentoInicio"
+                    value={atendimentoInicio}
+                    onChange={e => setAtendimentoInicio(e.target.value)}
+                    placeholder="Selecione o horário"
+                  />
+                  <label>Fim do expediente</label>
+                  <input
+                    type="time"
+                    name="atendimentoFim"
+                    value={atendimentoFim}
+                    onChange={e => setAtendimentoFim(e.target.value)}
+                    placeholder="Selecione o horário"
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Skills do Barbeiro</label>
+                  <Form.Dropdown
+                    placeholder='Selecione as skills'
+                    fluid
+                    multiple
+                    selection
+                    name="skills"
+                    options={skillOptions}
+                    value={skills}
+                    onChange={(e, { value }) => setSkills(value)}
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Senha</label>
+                  <input
+                    type="text"
+                    name="senha"
+                    value={senha}
+                    onChange={e => setSenha(e.target.value)}
+                    placeholder="Escolha uma senha"
+                  />
+                </Form.Field>
+                <Button 
+                  align='center'
+                  className="ui button"
+                  inverted
+                  circular
+                  icon
+                  labelPosition='left'
+                  color='black'
+                  floated='right'
+                  onClick={() => salvar()}
+                >
+                  <Icon name='save' />
+                  Salvar
+                </Button>
+              </Form>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </div>
+    </>
   );
 }
 

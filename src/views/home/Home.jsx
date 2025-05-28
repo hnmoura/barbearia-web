@@ -42,7 +42,7 @@ function Home() {
                     <Step.Content>
                       <Step.Title> Faça-nos uma visita </Step.Title>
                       <Step.Description>
-                        Usufrua de nossos serviços como um verdadeiro <strong> Chefe </strong>.
+                        Aproveite nossos serviços como um verdadeiro <strong> Chefe </strong>.
                       </Step.Description>
                     </Step.Content>
                   </Step>

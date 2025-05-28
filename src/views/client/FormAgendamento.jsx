@@ -50,95 +50,97 @@ function Agendamento() {
   }
 
   return (
-    <div className="ui container">
+    <>
       <MenuSistema tela={'agendamento'} />
-      <Grid stackable centered>
-        <Grid.Row>
-          <Grid.Column mobile={16} tablet={8} computer={8}>
-            <Form className="ui form" widths='equal'>
-              <Form.Field>
-                <label>Nome Completo</label>
-                <input
-                  type="text"
-                  name="nome"
-                  value={nome}
-                  onChange={e => setNome(e.target.value)}
-                  placeholder="Nome do Cliente"
-                />
-              </Form.Field>
-              <Form.Field>
-                <label>Data de atendimento</label>
-                <input
-                  type="date"
-                  name="dataAtendimento"
-                  value={dataAtendimento}  // A data é mantida no formato yyyy-MM-dd
-                  onChange={e => setDataAtendimento(e.target.value)}  // A data é salva diretamente no formato correto
-                />
-              </Form.Field>
-              <Form.Field>
-                <label>Serviço</label>
-                <Dropdown
-                  placeholder='Selecione um serviço'
-                  fluid
-                  selection
-                  name="servico"
-                  options={servicosOptions}
-                  value={servico}
-                  onChange={(e, data) => setServico(data.value)}
-                />
-              </Form.Field>
-              <Form.Field>
-                <label>Barbeiro</label>
-                <Dropdown
-                  placeholder='Selecione um barbeiro'
-                  fluid
-                  selection
-                  name="barbeiro"
-                  options={barbeirosOptions}
-                  value={barbeiro}
-                  onChange={(e, data) => setBarbeiro(data.value)}
-                />
-              </Form.Field>
-              <Form.Field>
-                <label>Horário</label>
-                <input
-                  type="time"
-                  name="horario"
-                  value={horario}
-                  onChange={e => setHorario(e.target.value)}
-                  placeholder="Selecione o horário"
-                />
-              </Form.Field>
-              <Form.Field>
-                <label>Observacoes</label>
-                <textarea
-                  type="text"
-                  name="observacoes"
-                  value={observacoes}
-                  onChange={e => setObservacoes(e.target.value)}
-                  placeholder="Alergias, preferências, detalhes"
-                />
-              </Form.Field>
+      <div className="ui container">
+        <Grid stackable centered>
+          <Grid.Row>
+            <Grid.Column mobile={16} tablet={8} computer={8}>
+              <Form className="ui form" widths='equal'>
+                <Form.Field>
+                  <label>Nome Completo</label>
+                  <input
+                    type="text"
+                    name="nome"
+                    value={nome}
+                    onChange={e => setNome(e.target.value)}
+                    placeholder="Nome do Cliente"
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Data de atendimento</label>
+                  <input
+                    type="date"
+                    name="dataAtendimento"
+                    value={dataAtendimento}  // A data é mantida no formato yyyy-MM-dd
+                    onChange={e => setDataAtendimento(e.target.value)}  // A data é salva diretamente no formato correto
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Serviço</label>
+                  <Dropdown
+                    placeholder='Selecione um serviço'
+                    fluid
+                    selection
+                    name="servico"
+                    options={servicosOptions}
+                    value={servico}
+                    onChange={(e, data) => setServico(data.value)}
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Barbeiro</label>
+                  <Dropdown
+                    placeholder='Selecione um barbeiro'
+                    fluid
+                    selection
+                    name="barbeiro"
+                    options={barbeirosOptions}
+                    value={barbeiro}
+                    onChange={(e, data) => setBarbeiro(data.value)}
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Horário</label>
+                  <input
+                    type="time"
+                    name="horario"
+                    value={horario}
+                    onChange={e => setHorario(e.target.value)}
+                    placeholder="Selecione o horário"
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Observacoes</label>
+                  <textarea
+                    type="text"
+                    name="observacoes"
+                    value={observacoes}
+                    onChange={e => setObservacoes(e.target.value)}
+                    placeholder="Alergias, preferências, detalhes"
+                  />
+                </Form.Field>
 
-              <Button
-                className="ui button"
-                inverted
-                circular
-                icon
-                labelPosition='left'
-                color='blue'
-                floated='right'
-                onClick={() => salvar()}
-              >
-                <Icon name='save' />
-                Salvar
-              </Button>
+                <Button
+                  className="ui button"
+                  inverted
+                  circular
+                  icon
+                  labelPosition='left'
+                  color='blue'
+                  floated='right'
+                  onClick={() => salvar()}
+                >
+                  <Icon name='save' />
+                  Salvar
+                </Button>
 
-            </Form>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    </div>
+              </Form>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </div>
+    </>
   );
 }
 

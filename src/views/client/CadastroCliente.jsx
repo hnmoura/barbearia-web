@@ -56,101 +56,103 @@ function CadastroCliente() {
   // };
 
   return (
-    <div className="ui container">
+    <>
       <MenuSistema tela={'cliente'} />
-      <Grid stackable centered>
-        <Grid.Row>
-          <Grid.Column mobile={16} tablet={8} computer={8}>
-            <Form className="ui form" widths='equal'>
-              <Form.Field>
-                <label>Nome Completo</label>
-                <input
-                  type="text"
-                  name="nome"
-                  value={nome}
-			            onChange={e => setNome(e.target.value)}
-                  placeholder="Nome do Cliente"
-                />
-              </Form.Field>
-              <Form.Field>
-                <label>Data de nascimento</label>
-                <input
-                  type="date"
-                  name="dataNascimento"
-                  value={dataNascimento}  // A data é mantida no formato yyyy-MM-dd
-                  onChange={e => setDataNascimento(e.target.value)}  // A data é salva diretamente no formato correto
-                />
-              </Form.Field>
-              <Form.Field>
-                <label>CPF</label>
-                <input
-                  type="text"
-                  name="cpf"
-                  value={cpf}
-			            onChange={e => setCpf(e.target.value)}
-                  placeholder="cpf"
-                />
-              </Form.Field>
-              <Form.Field>
-                <label>Endereço</label>
-                <input
-                  type="text"
-                  name="endereco"
-                  value={endereco}
-			            onChange={e => setEndereco(e.target.value)}
-                  placeholder="Endereço"
-                />
-              </Form.Field>
-              <Form.Field>
-                <label>Telefone</label>
-                <input
-                  type="text"
-                  name="telefone"
-                  value={foneCelular}
-			            onChange={e => setFoneCelular(e.target.value)}
-                  placeholder="Número de telefone"
-                />
-              </Form.Field>
-              <Form.Field>
-                <label>Email</label>
-                <input
-                  type="text"
-                  name="email"
-                  value={email}
-			            onChange={e => setEmail(e.target.value)}
-                  placeholder="Email"
-                />
-              </Form.Field>
-              <Form.Field>
-                <label>Senha</label>
-                <input
-                  type="text"
-                  name="senha"
-                  value={senha}
-                  onChange={e => setSenha(e.target.value)}
-                  placeholder="Escolha uma senha"
-                />
-              </Form.Field>
+      <div className="ui container">
+        <Grid stackable centered>
+          <Grid.Row>
+            <Grid.Column mobile={16} tablet={8} computer={8}>
+              <Form className="ui form" widths='equal'>
+                <Form.Field>
+                  <label>Nome Completo</label>
+                  <input
+                    type="text"
+                    name="nome"
+                    value={nome}
+                    onChange={e => setNome(e.target.value)}
+                    placeholder="Nome do Cliente"
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Data de nascimento</label>
+                  <input
+                    type="date"
+                    name="dataNascimento"
+                    value={dataNascimento}  // A data é mantida no formato yyyy-MM-dd
+                    onChange={e => setDataNascimento(e.target.value)}  // A data é salva diretamente no formato correto
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>CPF</label>
+                  <input
+                    type="text"
+                    name="cpf"
+                    value={cpf}
+                    onChange={e => setCpf(e.target.value)}
+                    placeholder="cpf"
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Endereço</label>
+                  <input
+                    type="text"
+                    name="endereco"
+                    value={endereco}
+                    onChange={e => setEndereco(e.target.value)}
+                    placeholder="Endereço"
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Telefone</label>
+                  <input
+                    type="text"
+                    name="telefone"
+                    value={foneCelular}
+                    onChange={e => setFoneCelular(e.target.value)}
+                    placeholder="Número de telefone"
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Email</label>
+                  <input
+                    type="text"
+                    name="email"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                    placeholder="Email"
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Senha</label>
+                  <input
+                    type="text"
+                    name="senha"
+                    value={senha}
+                    onChange={e => setSenha(e.target.value)}
+                    placeholder="Escolha uma senha"
+                  />
+                </Form.Field>
 
-              <Button
-                className="ui button"
-                inverted
-                circular
-                icon
-                labelPosition='left'
-                color='blue'
-                floated='right'
-                onClick={() => salvar()}
-              >
-                <Icon name='save' />
-                Salvar
-              </Button>
+                <Button
+                  className="ui button"
+                  inverted
+                  circular
+                  icon
+                  labelPosition='left'
+                  color='blue'
+                  floated='right'
+                  onClick={() => salvar()}
+                >
+                  <Icon name='save' />
+                  Salvar
+                </Button>
 
-            </Form>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    </div>
+              </Form>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </div>
+    </>
   );
 }
 
