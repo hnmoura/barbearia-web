@@ -62,6 +62,7 @@ function CadastroCliente() {
         <Grid stackable centered>
           <Grid.Row>
             <Grid.Column mobile={16} tablet={8} computer={8}>
+              <h2> Cadastre-se </h2>
               <Form className="ui form" widths='equal'>
                 <Form.Field>
                   <label>Nome Completo</label>

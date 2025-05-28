@@ -62,6 +62,7 @@ function CadastroBarbeiro() {
         <Grid columns={2} divided stackable>
           <Grid.Row>
             <Grid.Column width={7}>
+              <h3> Cadastro de Barbeiros </h3>
               <Form className="ui form form-segment" widths='equal'>
                 <Form.Field>
                   <label>Nome Completo</label>
