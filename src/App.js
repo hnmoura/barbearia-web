@@ -1,11 +1,14 @@
 import { Segment, Menu } from 'semantic-ui-react';
 import './App.css';
 import Rotas from './Rotas';
+import 'semantic-ui-css/semantic.min.css'; 
+import './theme.css';
+
 
 function App() {
 
-  return (
-
+return (
+  <>
     <div className="App">
       
       <Rotas /> {/*Importando as rotas*/}
@@ -17,7 +20,8 @@ function App() {
       </div>
 
     </div>
-  );
+  </>
+);
 }
 
 export default App;

@@ -2,7 +2,9 @@
 import React from "react";
 import { Container, Grid, Image, Step } from 'semantic-ui-react';
 import MenuSistema from '../../MenuSistema';
-import './Home.css'; 
+import '../../theme.css'; 
+
+
 
 function Home() {
   return (

@@ -2,6 +2,9 @@ import { useState } from 'react';
 import { Form, Button, Grid, Icon, Container, Image } from 'semantic-ui-react';
 import MenuSistema from '../../MenuSistema';
 import axios from "axios";
+import 'semantic-ui-less/semantic.less';
+
+
 
 
 //skills do barbeiro - futuramente vindo direto do banco
