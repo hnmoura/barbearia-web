@@ -2,6 +2,7 @@
 import React from "react";
 import { Container, Grid, Image, Step } from 'semantic-ui-react';
 import MenuSistema from '../../MenuSistema';
+import './Home.css'; 
 
 function Home() {
   return (
@@ -16,7 +17,7 @@ function Home() {
                 <Image src='/logoprovisorio.png' size='medium' />
               </Grid.Column>
               <Grid.Column>
-                <h2>Bem-vindo à Barbearia, Chefe!</h2>
+                <h2>Bem-vindo à Barbearia, <strong> Chefe! </strong> </h2>
                 <p>Por onde começar?</p>
                 
                 <Step.Group vertical ordered>

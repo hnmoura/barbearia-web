@@ -1,5 +1,4 @@
-import { Segment } from 'semantic-ui-react';
-
+import { Segment, Menu } from 'semantic-ui-react';
 import './App.css';
 import Rotas from './Rotas';
 
