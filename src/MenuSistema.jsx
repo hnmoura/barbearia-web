@@ -26,15 +26,14 @@ function MenuSistema(props) {
             as={Link}
             to="/login-cliente"
           />
-        </Dropdown.Menu>
-      </Dropdown>
-
-      <Menu.Item
+        <Menu.Item
         content="Agendamento"
         active={props.tela === "Agendamento"}
         as={Link}
         to="/form-agendamento"
       />
+        </Dropdown.Menu>
+      </Dropdown>
       <Menu.Item
         content="Barbeiro"
         active={props.tela === "Cadastrar barbeiro"}
