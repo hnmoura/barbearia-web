@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Form, Button, Grid, Icon  } from 'semantic-ui-react';
 import MenuSistema from '../../MenuSistema';
 import axios from "axios";
-import styled from 'styled-components';
+
 
 
 // Função para salvar os dados
