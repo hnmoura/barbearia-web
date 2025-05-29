@@ -20,7 +20,7 @@ function Home() {
               </Grid.Column>
               <Grid.Column>
                 <h2>Bem-vindo à Barbearia, <strong> Chefe! </strong> </h2>
-                <p>Por onde começar?</p>
+                <p> Por onde começar? </p>
                 
                 <Step.Group vertical ordered>
                   <Step>
@@ -31,7 +31,6 @@ function Home() {
                       </Step.Description>
                     </Step.Content>
                   </Step>
-
                   <Step>
                     <Step.Content>
                       <Step.Title>Agende um atendimento </Step.Title>
